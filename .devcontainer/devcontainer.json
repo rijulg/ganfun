@@ -1,0 +1,19 @@
+{
+    "name": "GAN Fun",
+    "dockerFile": "Dockerfile",
+    "service": "dev",
+    "runArgs": ["--gpus=all", "--shm-size=8G"],
+    "forwardPorts": [8888],
+    "mounts": [
+      "source=${localWorkspaceFolder},target=/home/workspace,type=bind,consistency=cached",
+      "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/root/.ssh-localhost,readonly,type=bind,consistency=cached",
+      "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/root/.gitconfig,readonly,type=bind,consistency=cached"
+    ],
+    "workspaceFolder": "/home/workspace",
+    "extensions": [
+      "ms-python.python",
+      "eamodio.gitlens",
+      "esbenp.prettier-vscode"
+    ]
+  }
+  
